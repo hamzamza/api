@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extends: false }));
 app.use(express.json());
 app.use(cookieParser())
 // server data 
-const port = process.env.port || 5000
+const port = process.env.PORT || 5000
 const secret = process.env.MONGO;
 // uploaingrouter
 // routes
