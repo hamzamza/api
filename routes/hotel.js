@@ -3,7 +3,7 @@ import { getHotels, createHotel, deleteall, countByCity, countByType, updateHote
 import ver from "../utils/verifyToken.js"
 const { verifyAdmin } = ver
 const router = express.Router()
-router.route('/').get(getHotels).post(verifyAdmin, createHotel)
+router.route('/').get(getHotels).post( createHotel)
 router.route('/deletall').delete(deleteall)
 router.route('/countByType').get(countByType)
 router.route('/countByCity').get(countByCity)

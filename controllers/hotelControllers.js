@@ -46,7 +46,7 @@ const getHotels = async (req, res) => {
     if (city === "everywhere") {
         hotels = await hotel.find({}).limit(req.query.limit)
     }
-    else { hotels = await hotel.find({ ...others, cheapestPrice: { $gt: min || 1, $lt: max || 400 } }).limit(req.query.limit) }
+    else { hotels = await hotel.find({ ...others, city:city.toLowerCase(), cheapestPrice: { $gt: min || 1, $lt: max || 400 } }).limit(req.query.limit) }
     res.status(200).json(hotels)
 }
 const deleteHotel = async (req, res) => {
